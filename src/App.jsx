@@ -12,8 +12,7 @@ const APIHost = axios.create({
     baseURL: "/api",
     headers: {
         'accept': 'application/json',
-        'Content-Type': 'application/json',
-        "x-forwarded-proto": "http",
+        'Content-Type': 'application/json'
     },
     timeout: 5000,
 });
