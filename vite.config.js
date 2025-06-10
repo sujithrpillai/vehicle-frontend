@@ -6,9 +6,14 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: true,
-    watch: {
-      usePolling: true, // Use polling for file changes, useful in Docker/Podman
+    watch: { usePolling: true },
+    port: 3000,
+    proxy: {
+      '/api': {
+        target: 'http://backend',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '/api'),
+      },
     },
-    port: 3000, // Default port for Vite
   },
 })

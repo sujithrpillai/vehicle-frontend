@@ -13,7 +13,6 @@ const APIHost = axios.create({
     headers: {
         'accept': 'application/json',
         'Content-Type': 'application/json',
-        "host": "localhost",
         "x-forwarded-proto": "http",
     },
     timeout: 5000,
