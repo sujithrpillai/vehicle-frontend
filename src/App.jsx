@@ -2,20 +2,22 @@ import { useState } from 'react'
 import axios from 'axios'; // Component for making HTTP requests
 import { Button, TextField, Alert, Stack} from '@mui/material';
 import '@mui/material/styles'; // Importing Material-UI styles
-import './app.css'; // Custom styles for the application
+import './App.css'; // Custom styles for the application
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
 import NoCrashIcon from '@mui/icons-material/NoCrash';
 
 
 const APIHost = axios.create({
-    baseURL: `http://localhost:8050/api`, // Use relative path for API calls
+    baseURL: "/api",
     headers: {
-          'accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-    timeout: 5000, // Set timeout to 5 seconds (5,000 milliseconds)
-  });
+        'accept': 'application/json',
+        'Content-Type': 'application/json',
+        "host": "localhost",
+        "x-forwarded-proto": "http",
+    },
+    timeout: 5000,
+});
 
 const checkVehicle = async (vehicle_to_check)=> {
   try {
