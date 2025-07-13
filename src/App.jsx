@@ -39,7 +39,7 @@ function App() {
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <NoCrashIcon sx={{ fontSize: 80 , color: '#1976d2'}} />
           </div>
-        <h1> Vehicle Checker v2</h1>
+        <h1> Vehicle Checker v1</h1>
         <p>
           Enter a vehicle number to check if it has any RTO notices,<br />
           such as being reported stolen, expired registration, or outstanding dues.
